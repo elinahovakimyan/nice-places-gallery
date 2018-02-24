@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.navbar {
+  background-color: #337ab7;
+  border: none;
+}
+
+a, .navbar-brand {
+  color: white !important;
+}
+
+.wlc-message {
+  margin-top: 120px;
+  margin-bottom: 80px;
+}
+
+.home-btn {
+  font-size: 28px;
+  padding: 25px 40px;
+  background: linear-gradient(141deg, #466796 0%, #5c90a8 51%, #287996 75%);
+  margin-bottom: 210px;
+}
+
+.thumbnail img {
+  width: 400px;
+  height: 300px;
+}
+
+.modal-img {
+  max-width: 100%;
+}
+
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
