@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
 
-const Header = () => {
+const Header = ({path}) => {
   return(
     <Navbar inverse collapseOnSelect>
       <Navbar.Header>
@@ -20,9 +20,14 @@ const Header = () => {
           </NavItem>
         </Nav>
         <Nav pullRight>
+        {!path.includes("gallery") &&
           <NavItem eventKey={1} href="#">
             Have a Safe Trip!
-          </NavItem>
+          </NavItem>}
+        {path.includes("gallery") &&
+          <NavItem eventKey={1} href="#">
+            Enjoy the Gallery!
+          </NavItem>}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
