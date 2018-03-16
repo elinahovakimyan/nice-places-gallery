@@ -1,12 +1,15 @@
 import React from "react";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Header = ({path}) => {
   return(
     <Navbar inverse collapseOnSelect>
       <Navbar.Header>
         <Navbar.Brand>
-          Nice Gallery
+          <Link to="/">
+            Jouney
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>

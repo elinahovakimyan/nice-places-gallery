@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class Filter extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class Filter extends React.Component {
   }
 
   render() {
+    const path = this.props.path;
     return(
       <div className="filter">
         <select className="dropdown" onChange={this.selectChange.bind(this)}>
@@ -42,6 +44,11 @@ class Filter extends React.Component {
                className="filter-input"
         />
         <Button onClick={this.submit.bind(this)}> Search </Button>
+        &nbsp;
+        {path.includes('filtered') &&
+        <Link to="/gallery">
+          <Button  bsStyle="primary"> Clear Search </Button>
+        </Link>}
       </div>
     )
   }

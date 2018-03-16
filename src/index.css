@@ -5,6 +5,10 @@ body {
   text-align: center;
 }
 
+nav {
+  margin-bottom: 0px !important;
+}
+
 .navbar {
   background-color: #337ab7;
   border: none;
@@ -19,11 +23,93 @@ a, .navbar-brand {
   margin-bottom: 80px;
 }
 
+.glyphicon-chevron-down {
+  color: black !important;
+  font-size: 38px !important;
+  padding: 8px 8px 6px 10px;
+  border: 1px black solid;
+  border-radius: 100%;
+  /* position: absolute; */
+  bottom: 0;
+  left: 0;
+}
+
+.traveller-div {
+  width: 100%;
+  min-height: 400px;
+  background: url('./assets/traveller.jpg');
+  background-size: cover;
+}
+
+.traveller-div h3 {
+  margin: 0;
+  padding: 20px;
+}
+
 .home-btn {
   font-size: 28px;
   padding: 25px 40px;
   background: linear-gradient(141deg, #466796 0%, #5c90a8 51%, #287996 75%);
-  margin-bottom: 210px;
+  margin: 60px;
+}
+
+@media only screen and (max-width: 800px)  {
+  .traveller-div {
+    height: 400px;
+  }
+
+  .home-btn {
+    font-size: 18px;
+    padding: 12px;
+    background: linear-gradient(141deg, #466796 0%, #5c90a8 51%, #287996 75%);
+    margin: 35px;
+  }
+
+  .glyphicon-chevron-down {
+    margin-top: 200px;
+  }
+}
+
+/* @media only screen and (max-width: 750px)  {
+  .traveller-div {
+    height: 200px;
+  }
+
+
+} */
+
+@media only screen and (min-width: 1300px)  {
+  .traveller-div {
+    height: 920px;
+  }
+
+  .glyphicon-chevron-down {
+    margin-top: 720px;
+  }
+
+  .traveller-div h3 {
+    font-size: 38px;
+  }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 700px) {
+  .traveller-div {
+    height: 600px;
+  }
+
+  .glyphicon-chevron-down {
+    margin-top: 450px;
+  }
+}
+
+
+.glyphicon {
+  font-size: 72px;
+  color: #5c90a8;
+}
+
+.row-home-feature {
+  margin: 40px 5px 40px 5px;
 }
 
 .thumbnail img {

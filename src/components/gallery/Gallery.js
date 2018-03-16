@@ -6,12 +6,6 @@ import GalleryItem from './GalleryItem';
 import { Filter } from '../common';
 
 class Gallery extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: []
-    }
-  }
 
   getData() {
     const { type, keyword } = this.props.match.params;
@@ -37,11 +31,12 @@ class Gallery extends React.Component {
   render() {
     const mainData =  this.getData(data);
     const { keyword } = this.props.match.params;
+    const path = this.props.location.pathname;
 
     return(
       <Grid>
         <h2>Amazing places to visit this year!</h2> <br/>
-        <Filter search={this.search.bind(this)} keyword={keyword}/>
+        <Filter search={this.search.bind(this)} keyword={keyword} path={path}/>
 
         {mainData.length === 0 && <div className="back-div">
           <h4> No Records Found :( </h4>

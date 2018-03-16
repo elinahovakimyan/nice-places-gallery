@@ -7,7 +7,7 @@ const GalleryItem = ({item}) => {
     <Col xs={12} sm={6} md={4}>
       <Thumbnail src={item.url} alt="WOW! Amazing Place!">
         <h4>{item.name}</h4>
-        <ModalBtn btnTitle="See Description" modalTitle={item.name}>
+        <ModalBtn btnTitle="See Description" modalTitle={item.name} itemId={item.id}>
           <img src={item.url} className="modal-img" alt="Better view"/>
 
           <p>{item.description}</p>

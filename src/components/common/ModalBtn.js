@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class ModalBtn extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class ModalBtn extends React.Component {
   handleOpen() {
     this.setState({
       modalIsOpen: true
-    })
+    });
   }
 
   handleClose() {
@@ -24,18 +25,24 @@ class ModalBtn extends React.Component {
   }
 
   render() {
+    const { btnTitle, modalTitle, itemId } = this.props;
+    const { modalIsOpen } = this.state;
+
     return(
       <div>
-        <Button bsStyle="primary" onClick={this.handleOpen}>{this.props.btnTitle}</Button>
+        <Button bsStyle="primary" onClick={this.handleOpen}>{btnTitle}</Button>
 
-        <Modal show={this.state.modalIsOpen} onHide={this.handleClose}>
+        <Modal show={modalIsOpen} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.modalTitle}</Modal.Title>
+            <Modal.Title>{modalTitle}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {this.props.children}
           </Modal.Body>
           <Modal.Footer>
+            <Link to={`gallery/item/${itemId}`}>
+              <Button bsStyle="primary">Learn More</Button>
+            </Link>&nbsp;
             <Button onClick={this.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
