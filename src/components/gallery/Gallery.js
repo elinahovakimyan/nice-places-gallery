@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import data from '../../data/data.json';
 import GalleryItem from './GalleryItem';
@@ -34,7 +34,7 @@ class Gallery extends React.Component {
     const path = this.props.location.pathname;
 
     return(
-      <Grid>
+      <div className="gallery-main">
         <h2>Amazing places to visit this year!</h2> <br/>
         <Filter search={this.search.bind(this)} keyword={keyword} path={path}/>
 
@@ -44,7 +44,7 @@ class Gallery extends React.Component {
         </div>}
 
         {mainData.length > 0 &&
-          <Row>
+          <Row className="gallery-row">
             {mainData.map(item => {
               return(
                 <GalleryItem key={item.id} item={item}/>
@@ -52,7 +52,7 @@ class Gallery extends React.Component {
             })}
           </Row>}
 
-      </Grid>
+      </div>
     )
   }
 }

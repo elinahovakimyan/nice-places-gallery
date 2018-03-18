@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
+import { Grid } from 'react-bootstrap';
 import { Header, Footer } from './common';
 import Gallery from './gallery/Gallery';
 import Homepage from './home/Homepage';
@@ -9,7 +10,7 @@ class App extends Component {
   render() {
     const path = this.props.location.pathname;
     return (
-      <div className="App">
+      <Grid className="app">
         <Header path={path}/>
 
         <Switch>
@@ -20,7 +21,7 @@ class App extends Component {
         </Switch>
 
         <Footer/>
-      </div>
+      </Grid>
     );
   }
 }

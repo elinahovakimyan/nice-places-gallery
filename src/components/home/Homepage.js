@@ -1,45 +1,51 @@
 import React from 'react';
-import { Row, Button, Glyphicon } from 'react-bootstrap';
+import { Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatureBlock from './FeatureBlock';
+import CountryBlock from './CountryBlock';
+import kazan from '../../assets/kazan.jpg';
 
 const Homepage = () => {
   return(
-    <div>
-      {/*<div className="wlc-message">
-        <h1>Let Your Journey Begin...</h1>
-        <img src="https://www.flyingblue.com/2.0.2/img/form/loading.gif" width="300px" alt="trip-airplane"/>
-        <h3> “I am not the same, having seen the moon shine on the other side of the world.” – Mary Anne Radmacher</h3>
-        <br/>
+    <div className="home-main">
+      <img src={kazan} alt="Travelling Place" className="traveller-img" />
 
-      </div>*/}
+      <h1> Wondering why travel? </h1>
 
-      <div className="traveller-div">
+      <Row className="row-home-feature">
+        <FeatureBlock icon="sunglasses" title="Relax and Re-Energize"/>
+        <FeatureBlock icon="signal" title="High-Level Emotions"/>
+        <FeatureBlock icon="heart" title="Love Towards Nature"/>
+      </Row>
 
-        <h3> Let the Journey Begin For You... </h3>
-
-        <a href="#features">
-          <Glyphicon glyph="chevron-down"/>
-        </a>
-      </div>
-
-      <div id="features">
-        <h2> Wondering why travel? </h2>
-
-        <Row bsClass="row-home-feature">
-          <FeatureBlock icon="sunglasses" title="Relax and Re-Energize"/>
-          <FeatureBlock icon="signal" title="High-Level Emotions"/>
-          <FeatureBlock icon="heart" title="Love Towards Nature"/>
-        </Row>
-      </div>
-
-
-
-      <Button bsStyle="primary" bsSize="large" className="home-btn">
+      {/*<Button bsStyle="primary" bsSize="large" className="home-btn">
         <Link to="/gallery">
           Start a Wonderful trip!
         </Link>
+      </Button>*/}
+      <Button bsStyle="primary" className="show-btn home-btns">
+        <Link to="/gallery">
+          Show the gallery
+        </Link>
       </Button>
+      <Button bsStyle="default" className="learn-btn home-btns">
+        <Link to="https://list25.com/25-most-visited-countries-in-the-world/" target="_blank">
+          Learn more
+        </Link>
+      </Button>
+
+      <br/><br/><hr/><br/>
+
+      <div>
+        <h1> The most visited countries </h1>
+
+        <Row className="row-country-block">
+          <CountryBlock classAtt="france" title="France"/>
+          <CountryBlock classAtt="us" title="United States"/>
+          <CountryBlock classAtt="spain" title="Spain"/>
+          <CountryBlock classAtt="china" title="China"/>
+        </Row>
+      </div>
     </div>
   )
 }
